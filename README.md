@@ -35,3 +35,34 @@ This project reflects real-world data engineering workflows with complete automa
 [Data_Loading.ipynb – saves into MySQL database]
                     ↓
  📊 Superset Dashboards (auto-refreshing)
+
+```
+
+---
+
+## ✅ Key Features & Achievements
+ - 🔄 Ingestion → Transformation → Load pipeline — fully automated via Airflow
+
+ - ⏱️ Scheduled DAGs using Airflow to run daily without manual trigger
+
+ - 🐳 Containerized all services using Docker & Docker Compose
+
+ - 🗃️ Data stored in MySQL, accessible across containers
+
+ - 📈 Designed insightful dashboards in Superset:
+
+ - Time-series trends of daily/monthly sales
+
+ - Product category performance
+
+ - Gender-wise sales distribution (pie chart)
+
+## 💡 Real-world issues solved:
+
+- Docker volume sync issues
+
+- Multi-container networking (Airflow ↔ MySQL ↔ Superset)
+
+- Path handling across host & container
+
+- 📁 Scalable folder structure with raw/processed separation
