@@ -1,21 +1,7 @@
-# RetailFlow
-## End-to-End Retail Data Pipeline (Automated & Containerized)
+# RetailFlow - End-to-End Retail Data Pipeline (Fully Automated & Containerized)
 RetailFlow is a fully automated and containerized **ETL data pipeline** for retail sales data — from ingestion to transformation, loading, and interactive reporting — built using industry-grade tools like **Airflow**, **Docker**, **MySQL**, and **Apache Superset**.
+
 This project reflects real-world data engineering workflows with complete automation, orchestration, and reporting — all running **without manual intervention** once deployed.
-
----
-
-## 🛠 Tech Stack
-
-| Layer            | Tools Used                        |
-|------------------|-----------------------------------|
-| Orchestration    | Apache Airflow                    |
-| Scripting        | Python                            |
-| Data Storage     | MySQL                             |
-| Reporting        | Apache Superset                   |
-| Containerization | Docker + Docker Compose           |
-| Notebook Runner  | Papermill                         |
-
 ---
 
 ## ⚙️ Pipeline Overview
@@ -71,6 +57,19 @@ This project reflects real-world data engineering workflows with complete automa
 - 📁 Scalable folder structure with raw/processed separation
 
 ---
+## 🛠 Tech Stack
+
+| Layer            | Tools Used                        |
+|------------------|-----------------------------------|
+| Orchestration    | Apache Airflow                    |
+| Scripting        | Python                            |
+| Data Storage     | MySQL                             |
+| Reporting        | Apache Superset                   |
+| Containerization | Docker + Docker Compose           |
+| Notebook Runner  | Papermill                         |
+
+---
+
 ## 🧪 How It Works
 1. Data Ingestion: Ingests daily CSVs based on date naming convention
 2. Transformation: Jupyter Notebook with business logic runs via Airflow
@@ -107,4 +106,39 @@ RetailFlow/
 ├── .gitignore
 └── README.md
 ``` 
+---
+
+## 🔧 How to Run
+```
+# Clone and go to project
+git clone https://github.com/mohdgeelani/RetailFlow.git
+Go to project root folder then move to airflow_docker
+cd airflow_docker
+
+# Build and start all services
+docker-compose up --build
+```
+### Then visit:
+
+- Airflow: http://localhost:8080
+- Superset: http://localhost:8088
+- Default creds: admin/admin
+---
+
+## 🚀 Future Enhancements
+ - Integrate AWS S3 or LocalStack for cloud-based data storage
+ - Add alerts (e.g., Slack/email) on DAG failure
+ - Include data validation using Great Expectations
+ - Automate Superset dashboard refresh via API
+ - Add unit tests for scripts/notebooks
+---
+
+## 💬 Final Words
+
+**RetailFlow** is more than just a project — it's a hands-on journey through real-world data engineering tasks such as data ingestion, transformation, data loading, orchestration, and containerization. 
+
+Designed to be scalable, modular, and production-ready, this project showcases practical skills that align well with roles in **Data Engineering**, **Backend Development**, and **DevOps**.
+
+Whether you're exploring the codebase or evaluating it as a portfolio piece, we hope RetailFlow offers meaningful insights and inspiration.
+
 
