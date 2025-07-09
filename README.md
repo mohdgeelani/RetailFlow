@@ -7,7 +7,7 @@ This project reflects real-world data engineering workflows with complete automa
 
 ### 📸 Superset in Action
 Here's a glimpse of the production-style dashboard created with Apache Superset:
-![RetailFlow Dashboard](images/screenshot.png)
+![RetailFlow Dashboard](images/Screenshot.png)
 ---
 
 ## ⚙️ Pipeline Overview
@@ -94,23 +94,24 @@ Here's a glimpse of the production-style dashboard created with Apache Superset:
 
 ```
 RetailFlow/
-├── dags/                   # Airflow DAGs
-├── scripts/                # Python ingestion script
-├── notebooks/              # notebooks (transform & load)
-│   └── transform_executed_notebooks_by_date
-|   └── data_loading_executed_notebooks_by_date
-|   └── transform.ipynb
-|   └── data_loading.ipynb
-├── data/
-│   ├── raw_data/           
-│   └── processed_data/
-|   └── transformed/
-|   └── aggregated/
-├── docker-compose.yaml
-├── Dockerfile
-├── requirements.txt
-├── .gitignore
-└── README.md
+  ├── airflow_docker/      
+    ├── dags/                   # Airflow DAGs
+    ├── scripts/                # Python ingestion script
+    ├── notebooks/              # notebooks (transform & load)
+    │   └── transform_executed_notebooks_by_date
+    |   └── data_loading_executed_notebooks_by_date
+    |   └── transform.ipynb
+    |   └── data_loading.ipynb
+    ├── data/
+    │   ├── raw_data/           
+    │   └── processed_data/
+    |   └── transformed/
+    |   └── aggregated/
+    ├── docker-compose.yaml
+    ├── Dockerfile
+    ├── requirements.txt
+    ├── .gitignore
+    └── README.md
 ``` 
 ---
 
