@@ -1,4 +1,5 @@
-# RetailFlow - End-to-End Retail Data Pipeline (Automated & Containerized)
+# RetailFlow
+## End-to-End Retail Data Pipeline (Automated & Containerized)
 RetailFlow is a fully automated and containerized **ETL data pipeline** for retail sales data — from ingestion to transformation, loading, and interactive reporting — built using industry-grade tools like **Airflow**, **Docker**, **MySQL**, and **Apache Superset**.
 This project reflects real-world data engineering workflows with complete automation, orchestration, and reporting — all running **without manual intervention** once deployed.
 
@@ -20,25 +21,27 @@ This project reflects real-world data engineering workflows with complete automa
 ## ⚙️ Pipeline Overview
 
 ```text
-              ┌────────────┐
-              │  Raw CSVs  │
-              └─────┬──────┘
-                    │
-[Ingestion.py – saves raw data to processed folder]
-                    ↓
+               ┌────────────┐
+               │  Raw CSVs  │
+               └─────┬──────┘
+                     │
+[Ingestion.py – saves raw data to processed data folder]
+                     ↓
 ┌─────────────────────────────────────────┐
 │ Cleaned CSV is saved inside /processed  │
 └─────────────────────────────────────────┘
-                    │
-[Transform.ipynb – cleanup, feature engineering]
-                    ↓
-[Data_Loading.ipynb – saves into MySQL database]
-                    ↓
- 📊 Superset Dashboards (auto-refreshing)
+                     ↓
+┌─────────────────────────────────────────────────┐
+│ Transform.ipynb – cleanup, feature engineering  │
+└─────────────────────────────────────────────────┘
+                     ↓
+┌─────────────────────────────────────────────────────┐
+│ Data_Loading.ipynb – saves data into MySQL database │
+└─────────────────────────────────────────────────────┘
+                     ↓
+           📊 Superset Dashboards
 
 ```
-
----
 
 ## ✅ Key Features & Achievements
  - 🔄 Ingestion → Transformation → Load pipeline — fully automated via Airflow
@@ -66,3 +69,19 @@ This project reflects real-world data engineering workflows with complete automa
 - Path handling across host & container
 
 - 📁 Scalable folder structure with raw/processed separation
+
+---
+## 🧪 How It Works
+1. Data Ingestion: Ingests daily CSVs based on date naming convention
+2. Transformation: Jupyter Notebook with business logic runs via Airflow
+3. Transformed data pushed to MySQL
+4. Visualization: Superset reads directly from MySQL for reporting
+---
+
+## 📁 Dataset Information
+- Dataset Name: Retail Sales Dataset – Unveiling Retail Trends
+- Source: Kaggle
+- Rows: 62 (sample-friendly)
+- Included in data/raw_data/transactions_sample.csv for demo/testing purposes
+---
+
