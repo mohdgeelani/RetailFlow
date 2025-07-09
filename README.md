@@ -6,8 +6,9 @@ This project reflects real-world data engineering workflows with complete automa
 ---
 
 ## 📸 Superset in Action
+
 Here's a glimpse of the production-style dashboard created with Apache Superset:
----
+
 ![RetailFlow Dashboard](images/Screenshot.png)
 ---
 
@@ -122,10 +123,11 @@ RetailFlow/
 
 ## 🔧 How to Run
 ```
-# Clone and go to project
+# Clone the repository
 git clone https://github.com/mohdgeelani/RetailFlow.git
-Go to project root folder then move to airflow_docker
-cd airflow_docker
+
+# Navigate to the Airflow project folder
+cd RetailFlow/airflow_docker
 
 # Build and start all services
 docker-compose up --build
