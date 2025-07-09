@@ -20,18 +20,18 @@ This project reflects real-world data engineering workflows with complete automa
 ## ⚙️ Pipeline Overview
 
 ```text
-           ┌────────────┐
-           │  Raw CSVs  │
-           └─────┬──────┘
-                 │
-         [Ingestion.py – saves to processed folder]
-                 ↓
-      ┌─────────────────────┐
-      │ Cleaned CSV in /processed │
-      └─────────────────────┘
-                 │
-      [Transform.ipynb – cleanup, feature engineering]
-                 ↓
-      [Data_Loading.ipynb – inserts into MySQL]
-                 ↓
-      📊 Superset Dashboards (auto-refreshing)
+              ┌────────────┐
+              │  Raw CSVs  │
+              └─────┬──────┘
+                    │
+[Ingestion.py – saves raw data to processed folder]
+                    ↓
+┌─────────────────────────────────────────┐
+│ Cleaned CSV is saved inside /processed  │
+└─────────────────────────────────────────┘
+                    │
+[Transform.ipynb – cleanup, feature engineering]
+                    ↓
+[Data_Loading.ipynb – saves into MySQL database]
+                    ↓
+ 📊 Superset Dashboards (auto-refreshing)
