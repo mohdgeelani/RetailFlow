@@ -6,7 +6,7 @@ This project reflects real-world data engineering workflows with complete automa
 ---
 
 ### 📸 Superset in Action
- Here's a glimpse of the production-style dashboard created with Apache Superset:
+Here's a glimpse of the production-style dashboard created with Apache Superset:
 ![RetailFlow Dashboard](images/screenshot.png)
 ---
 
@@ -94,23 +94,28 @@ This project reflects real-world data engineering workflows with complete automa
 
 ```
 RetailFlow/
-├── dags/                   # Airflow DAGs
-├── scripts/                # Python ingestion script
-├── notebooks/              # notebooks (transform & load)
-│   └── transform_executed_notebooks_by_date
-|   └── data_loading_executed_notebooks_by_date
-|   └── transform.ipynb
-|   └── data_loading.ipynb
-├── data/
-│   ├── raw_data/           
-│   └── processed_data/
-|   └── transformed/
-|   └── aggregated/
-├── docker-compose.yaml
-├── Dockerfile
-├── requirements.txt
-├── .gitignore
-└── README.md
+│
+├── airflow_docker/    # Main project folder (Dockerized environment)
+|   ├── dags/                   # Airflow DAGs
+│   │   └── retail_etl_pipeline.py
+|   ├── scripts/                # Python ingestion script
+|   │   └── ingestion.py
+|   ├── notebooks/              # notebooks (transform & load)
+|   │   └── transform_executed_notebooks_by_date
+|   |   └── data_loading_executed_notebooks_by_date
+|   |   └── transform.ipynb
+|   |   └── data_loading.ipynb
+|   ├── data/
+|   │   ├── raw_data/
+|   |   |   └── transactions_YYYY-MM-DD.csv         
+|   │   └── processed_data/
+|   |   └── transformed/
+|   |   └── aggregated/
+│   ├── warehouse/                  # MySQL data volume 
+|   ├── docker-compose.yaml         # Compose file to orchestrate services
+|   ├── Dockerfile                  # Custom Docker image for Airflow
+|   ├── requirements.txt            # Python dependencies
+├── README.md
 ``` 
 ---
 
