@@ -7,7 +7,7 @@ This project reflects real-world data engineering workflows with complete automa
 
 ### 📸 Superset in Action
 Here's a glimpse of the production-style dashboard created with Apache Superset:
-![RetailFlow Dashboard](images/screenshot.png)
+![RetailFlow Dashboard](images/Screenshot.png)
 ---
 
 ## ⚙️ Pipeline Overview
