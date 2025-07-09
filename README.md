@@ -81,7 +81,30 @@ This project reflects real-world data engineering workflows with complete automa
 ## 📁 Dataset Information
 - Dataset Name: Retail Sales Dataset – Unveiling Retail Trends
 - Source: Kaggle
-- Rows: 62 (sample-friendly)
+- Rows: 62 (sample rows for testing)
 - Included in data/raw_data/transactions_sample.csv for demo/testing purposes
 ---
+
+##  📦 Folder Structure
+
+```
+RetailFlow/
+├── dags/                   # Airflow DAGs
+├── scripts/                # Python ingestion script
+├── notebooks/              # notebooks (transform & load)
+│   └── transform_executed_notebooks_by_date
+|   └── data_loading_executed_notebooks_by_date
+|   └── transform.ipynb
+|   └── data_loading.ipynb
+├── data/
+│   ├── raw_data/           
+│   └── processed_data/
+|   └── transformed/
+|   └── aggregated/
+├── docker-compose.yaml
+├── Dockerfile
+├── requirements.txt
+├── .gitignore
+└── README.md
+``` 
 
