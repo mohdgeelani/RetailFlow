@@ -2,7 +2,6 @@ import pandas as pd
 import os
 from datetime import datetime
 
-print("hi")
 def get_base_dir():
     """
     Detect whether the script is running inside Docker or locally.
