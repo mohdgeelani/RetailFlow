@@ -1,9 +1,0 @@
-__pycache__/
-*.pyc
-*.pyo
-.env
-.env.*
-*.log
-data/raw_data/
-data/processed_data/
-warehouse/
