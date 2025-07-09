@@ -1,7 +1,12 @@
 # RetailFlow - End-to-End Retail Data Pipeline (Fully Automated & Containerized)
 RetailFlow is a fully automated and containerized **ETL data pipeline** for retail sales data — from ingestion to transformation, loading, and interactive reporting — built using industry-grade tools like **Airflow**, **Docker**, **MySQL**, and **Apache Superset**.
-
 This project reflects real-world data engineering workflows with complete automation, orchestration, and reporting — all running **without manual intervention** once deployed.
+---
+
+### 📸 Superset in Action
+Here's a glimpse of the production-style dashboard created with Apache Superset:
+
+![Superset Screenshot](images/screenshot.png)
 ---
 
 ## ⚙️ Pipeline Overview
