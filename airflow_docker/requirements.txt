@@ -1,0 +1,9 @@
+apache-airflow==2.9.1
+pandas
+matplotlib
+seaborn
+notebook
+apache-airflow-providers-papermill
+papermill
+sqlalchemy 
+mysql-connector-python

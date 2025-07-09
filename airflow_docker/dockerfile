@@ -1,0 +1,104 @@
+FROM python:3.9-slim
+
+ENV AIRFLOW_HOME=/opt/airflow
+
+# System dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    libpq-dev \
+    curl \
+    git \
+    nano \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set workdir
+WORKDIR $AIRFLOW_HOME
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+RUN pip install mysql-connector-python
+# Set PATH
+ENV PATH="$AIRFLOW_HOME/bin:$PATH"
+
+# Create folders
+RUN mkdir -p $AIRFLOW_HOME/dags $AIRFLOW_HOME/logs $AIRFLOW_HOME/plugins \
+    && mkdir -p $AIRFLOW_HOME/scripts $AIRFLOW_HOME/notebooks
+
+# Copy project files
+COPY ./dags $AIRFLOW_HOME/dags
+COPY ./scripts $AIRFLOW_HOME/scripts
+COPY ./notebooks $AIRFLOW_HOME/notebooks
+
+# Run webserver by default
+CMD ["airflow", "webserver"]
+
+# FROM python:3.9-slim
+
+# ENV AIRFLOW_HOME=/opt/airflow
+
+# # Install essential system dependencies
+# RUN apt-get update && \
+#     apt-get install -y --no-install-recommends \
+#     build-essential \
+#     libpq-dev \
+#     curl \
+#     git \
+#     && rm -rf /var/lib/apt/lists/*
+
+# # Install Airflow and requirements
+# COPY requirements.txt .
+# RUN pip install --no-cache-dir --upgrade pip && \
+#     pip install --no-cache-dir -r requirements.txt
+
+# # Make sure airflow is in PATH
+# ENV PATH="$AIRFLOW_HOME/bin:$PATH"
+
+# WORKDIR $AIRFLOW_HOME
+
+# # Create folders for airflow to work with
+# RUN mkdir -p $AIRFLOW_HOME/dags $AIRFLOW_HOME/logs $AIRFLOW_HOME/plugins
+
+# CMD ["airflow", "webserver"]
+
+# FROM apache/airflow:2.9.1-python3.10
+
+# USER root
+# RUN apt-get update && apt-get install -y gcc libpq-dev && apt-get clean
+
+# USER airflow
+# COPY requirements.txt /requirements.txt
+# RUN pip install --no-cache-dir -r /requirements.txt
+
+# FROM apache/airflow:2.9.1-python3.10
+
+# USER root
+# RUN apt-get update && apt-get install -y gcc libpq-dev && apt-get clean && rm -rf /var/lib/apt/lists/*
+# USER airflow
+
+# RUN pip install --no-cache-dir \
+#     papermill \
+#     ipykernel \
+#     openpyxl \
+#     apache-airflow-providers-papermill
+
+# FROM apache/airflow:2.9.1
+
+# USER root
+
+# RUN apt-get update && \
+#     apt-get install -y gcc libpq-dev && \
+#     apt-get clean && \
+#     rm -rf /var/lib/apt/lists/*
+
+# USER airflow
+
+# # Airflow and other packages
+# RUN pip install --no-cache-dir --upgrade pip && \
+#     pip install --no-cache-dir \
+#         papermill \
+#         ipykernel \
+#         openpyxl \
+#         apache-airflow-providers-papermill
